@@ -1,5 +1,7 @@
 # Nodejs/Express Firebase Admin SDK Example
 
+CRUD Web application using Firebasee Admin SDK with Firestore, Nodejs and express
+
 ### Environment variables
 
 * GOOGLE_APPLICATION_CREDENTIALS

@@ -1,12 +1,16 @@
-# Nodejs/Express Firebase Admin SDK CRUD
+# Nodejs/Express Firebase Admin SDK Example
 
 ![](./docs/screenshot.png)
 
-## environment variables
+### Environment variables
 
 * GOOGLE_APPLICATION_CREDENTIALS
 
-# Resources
+### Installation
+
+npm i
+
+### Resources
 - https://firebase.google.com/docs/admin/setup
 - https://firebase.google.com/docs/firestore/manage-data/delete-data
 - https://freefrontend.com/css-background-patterns/

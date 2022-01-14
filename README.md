@@ -1,7 +1,5 @@
 # Nodejs/Express Firebase Admin SDK Example
 
-![](./docs/screenshot.png)
-
 ### Environment variables
 
 * GOOGLE_APPLICATION_CREDENTIALS

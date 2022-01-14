@@ -1,42 +1,96 @@
 <div class="col-md-6 offset-md-3">
-    <div class="card">
-        <div class="card-header">
-            <h1>Tasks</h1>
-        </div>
-        <div class="card-body">
-            {{#if contacts}}
-            <ul class="list-group">
-                {{#each contacts}}
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                    {{firstname}}
-                    {{lastname}} / 
-                    {{email}}
-                    <a href="/delete-contact/{{@key}}" class="btn btn-danger">Delete</a>
-                </li>
-                {{/each}}
-            </ul>
-            {{else}}
-                <p>No Contacts Yet.</p>
-            {{/if}}
-        </div>
-        <div class="card-footer">
-            <form action="/new-contact" method="POST">
-                <div class="form-group">
-                    <input type="text" name="firstname" placeholder="Firstname" class="form-control" autofocus>
-                </div>
-                <div class="form-group">
-                    <input type="text" name="lastname" placeholder="Lastname" class="form-control">
-                </div>
-                <div class="form-group">
-                    <input type="email" name="email" placeholder="email" class="form-control">
-                </div>
-                <div class="form-group">
-                    <input type="tel" name="phone" placeholder="Phone" class="form-control">
-                </div>
-                <button class="btn btn-primary btn-block">
-                    Add
-                </button>
-            </form>
-        </div>
+  <div class="card bg-dark text-light">
+    <div class="card-header">
+      <h1 class="h4 text-white">Contacts List</h1>
     </div>
+    <div class="card-body">
+      {{#if contacts}}
+        <ul class="list-group">
+          {{#each contacts}}
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center"
+            >
+              <div class="my-auto">
+                <h3 class="h6">{{firstname}} {{lastname}}</h3>
+                <p>{{email}}</p>
+              </div>
+              <div>
+                <a
+                  href="/delete-contact/{{id}}"
+                  class="btn btn-danger"
+                >Delete</a>
+                <a
+                  href="/edit-contact/{{id}}"
+                  class="btn btn-secondary"
+                >Edit</a>
+              </div>
+            </li>
+          {{/each}}
+        </ul>
+      {{!-- {{else}}
+        <p class="fs-4 text-center">No Contacts Yet.</p> --}}
+      {{/if}}
+    </div>
+    <div class="card-footer">
+      <form action="{{#unless contact.id}}/new-contact{{else}}/update-contact/{{contact.id}}{{/unless}}" method="POST">
+        <div class="row">
+          <div class="col">
+            <label for="firstname">First Name:</label>
+            <input
+              type="text"
+              name="firstname"
+              placeholder="Firstname"
+              class="form-control mb-3"
+              value="{{contact.firstname}}"
+              autofocus
+            />
+          </div>
+          <div class="col">
+            <label for="lastname">Last Name:</label>
+            <input
+              type="text"
+              name="lastname"
+              placeholder="Lastname"
+              class="form-control mb-3"
+              value="{{contact.lastname}}"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="email"
+              class="form-control mb-3"
+              value="{{contact.email}}"
+            />
+          </div>
+          <div class="col">
+            <label for="phone">Phone:</label>
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone"
+              class="form-control mb-3"
+              value="{{contact.phone}}"
+            />
+          </div>
+        </div>
+        {{#if contact.id}}
+          <button class="btn btn-primary btn-block">
+            Update
+          </button>
+          <a href="/" class="btn btn-secondary">
+            Cancel
+          </a>
+        {{else}}
+          <button class="btn btn-primary btn-block">
+            Add
+          </button>
+        {{/if}}
+      </form>
+    </div>
+  </div>
 </div>

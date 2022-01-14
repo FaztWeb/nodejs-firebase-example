@@ -1,6 +1,10 @@
-# Nodejs/Express Firebase Example
+# Nodejs/Express Firebase Admin SDK CRUD
 
 ![](./docs/screenshot.png)
+
+## environment variables
+
+* GOOGLE_APPLICATION_CREDENTIALS
 
 # Resources
 - https://firebase.google.com/docs/admin/setup

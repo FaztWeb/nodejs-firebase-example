@@ -8,7 +8,7 @@ CRUD Web application using Firebasee Admin SDK with Firestore, Nodejs and expres
 
 ### Installation
 
-npm i
+npm -i express express-handlebars morgan firebase-admin
 
 ### Resources
 - https://firebase.google.com/docs/admin/setup
